@@ -1,10 +1,15 @@
-﻿@model List<RRWebTest.Models.ItemViewModel>
+﻿@*@model RRWebTest.Models.ItemViewModel
+*@
+@model List<RRWebTest.Models.ItemViewModel>
 
 <ul>
     @foreach (var item in Model)
     {
         <li>
-            @item.Name  @item.Manufacturer  @item.Quantity  @item.Price
+            Item:         @item.Name <br>
+            Manufacturer: @item.Manufacturer <br> 
+            Quantity:     @item.Quantity <br> 
+            Price:        @item.Price
         </li>
     }
 
