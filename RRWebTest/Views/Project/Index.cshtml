@@ -1,0 +1,55 @@
+﻿@model RRWebTest.Models.ProjectViewModel
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<p>This is the Index Page of the Project Controller</p>
+
+
+
+<div class="row">
+    <div class="col-10">
+        <div class="card">
+            <div class="card-header">
+                <h5>Create New Project</h5>
+                
+            </div>
+            <div class="card-body">
+            <form asp-controller="ProjectController" asp-action="CreateProject" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Project Name</label>
+                    <input asp-for=ProjectName type="text" class="form-control"/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Project Address</label>
+                    <input asp-for=ProjectAddress type="text" class="form-control"/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Start Date</label>
+                    <input asp-for=StartDate type="number" class="form-control"/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Expected Completion Date</label>
+                    <input asp-for=EndDate type="number" class="form-control"/>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+
+            </form>
+
+            </div>
+            <div class="card-footer"></div>
+        </div>
+<h4>
+    The next project info:<br />
+    Project Name: @Model.ProjectName<br/>
+    Project location: @Model.ProjectAddress<br />
+    Start date: @Model.StartDate.ToShortDateString()<br />
+    Expected completion date: @Model.EndDate.ToShortDateString()
+
+</h4>
+    </div>
+</div>
